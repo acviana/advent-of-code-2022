@@ -6,10 +6,11 @@ authors = ["Alex Viana <alexcostaviana@gamail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.10.2"
+mypy = "^0.991"
+ruff = "^0.0.203"
 
 [tool.poetry.dev-dependencies]
 black = "^23.1a1"
-flake8 = "^6.0.0"
 pytest = "^7.2.0"
 pytest-coverage = "^0.0"
 

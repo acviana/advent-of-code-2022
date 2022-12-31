@@ -10,13 +10,16 @@ export:
 	poetry export -f requirements.txt -o requirements.txt
 	poetry export -f requirements.txt -o requirements_dev.txt --dev
 
-flake8:
-	flake8 advent_of_code_2022/ tests/ --statistics
+ruff:
+	ruff advent_of_code_2022/
 
 install:
 	poetry install
 
-pre-commit: black flake8 test
+mypy:
+	mypy advent_of_code_2022/ --ignore-missing-imports
+
+pre-commit: black mypy ruff test
 
 run:
 	python advent_of_code_2022/day_$(day).py

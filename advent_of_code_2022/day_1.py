@@ -6,14 +6,14 @@ def load_data() -> List[str]:
         return [item.strip() for item in f.readlines()]
 
 
-def parse_data(data: List[str]):
+def parse_data(data: List[str]) -> List[List[int]]:
     return [
         [int(subitem) for subitem in item.split("|")]
         for item in "|".join(data).split("||")
     ]
 
 
-def get_max(parsed_data):
+def get_max(parsed_data: List[List[int]]) -> int:
     return max([sum(item) for item in parsed_data])
 
 
