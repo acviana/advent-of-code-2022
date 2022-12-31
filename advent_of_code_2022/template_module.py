@@ -14,11 +14,11 @@ def parse_data(data: List[str]):
     pass
 
 
-def main() -> None:
+def main() -> int:
     """The final answer."""
     data = load_data()
     parse_data(data)
-    return None
+    return 42
 
 
 if __name__ == "__main__":
