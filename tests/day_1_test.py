@@ -1,6 +1,6 @@
 import pytest
 
-from advent_of_code_2022.day_1 import get_max, parse_data
+from advent_of_code_2022.day_1 import get_sorted_sum, parse_data
 
 
 @pytest.fixture
@@ -33,5 +33,6 @@ def test_parse_data(input_data):
     assert parse_data(input_data) == expected_parsed_data
 
 
-def test_get_max(input_data):
-    assert get_max(parse_data(input_data)) == 24000
+def test_get_sorted_sum(input_data):
+    expected_sorted_sum = [4000, 5000, 10000, 11000, 24000]
+    assert get_sorted_sum(parse_data(input_data)) == expected_sorted_sum
