@@ -8,7 +8,7 @@ black-diff:
 
 export:
 	poetry export -f requirements.txt -o requirements.txt
-	poetry export -f requirements.txt -o requirements_dev.txt --dev
+	poetry export -f requirements.txt -o requirements_dev.txt --with=dev
 
 ruff:
 	ruff advent_of_code_2022/
