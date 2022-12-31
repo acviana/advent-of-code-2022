@@ -1,6 +1,6 @@
 # Advent of Code 2022
 
-Solutions to the [2022 Advent of Code](https://adventofcode.com/2022) challenge.
+Solutions to the [2022 Advent of Code](https://adventofcode.com/2022) challenge in Python 3.10.
 Emphasis is on experimenting with Python and system tooling instead of solving as many problems as possible.
 Previous year's solutions:
 
@@ -13,11 +13,21 @@ Previous year's solutions:
 
 This project uses [Poetry](https://python-poetry.org/) for dependency management.
 Once you have installed Poetry you can setup the project by running `poetry install` in the project directory.
+The only requirement to run the project code is the Python 3.10 standard library.
 
 A `requirements.txt` file is included if you prefer to set up your own environment with pip or another tool.
 
 ### Execution Instructions
-pass
+
+To run the code for a given day use the provided `Makefile`
+
+```console
+$ make run day=1
+
+python advent_of_code_2022/day_1.py
+Max Calorie Count is: 65912
+Top 3 Max Calorie Count is: 195625
+```
 
 ### Development Instructions
 
