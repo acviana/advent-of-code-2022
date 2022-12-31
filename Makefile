@@ -16,7 +16,9 @@ flake8:
 install:
 	poetry install
 
-pre-commit: black flake8 test run
+pre-commit: black flake8 test
+
+run:
 	python advent_of_code_2022/day_$(day).py
 
 setup-day:
