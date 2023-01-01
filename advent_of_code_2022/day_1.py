@@ -1,8 +1,17 @@
+"""Solutions to the Day 1 puzzle."""
+
 from typing import Dict, List
 
 
 def load_data() -> List[str]:
-    """Load data from the input file."""
+    """Load data from the input file with minimal parsing.
+
+    Parameters:
+        None
+
+    Returns:
+        The input data with one line per item.
+    """
     with open("inputs/day_1_input.txt") as f:
         return [item.strip() for item in f.readlines()]
 
@@ -11,8 +20,15 @@ def parse_data(data: List[str]) -> List[List[int]]:
     """Parse data into lists of integers.
 
     Probably slightly too cleaver, uses string manipulation by joining
-    on `|` and then breaking on `||` to arrive at the result. Couldn't
-    find a cleaner way with `itertools`.
+    on ``|`` and then breaking on ``||`` to arrive at the result.
+    Couldn't find a cleaner way with itertools.
+
+    Parameters:
+        data: output data from :func:`load_data`.
+
+    Returns:
+        List of list of integers with each list representing snack
+         calories per elf.
     """
     return [
         [int(subitem) for subitem in item.split("|")]
@@ -21,11 +37,27 @@ def parse_data(data: List[str]) -> List[List[int]]:
 
 
 def get_sorted_sum(parsed_data: List[List[int]]) -> List[int]:
-    """Sums over each sublist and orders the result."""
+    """Sums over each sublist and orders the result.
+
+    Parameters:
+        parsed_data: The output from :func:`parse_data`.
+
+    Returns:
+        Total calories per each elf.
+    """
     return sorted([sum(item) for item in parsed_data])
 
 
 def main() -> Dict[str, int]:
+    """
+    Solves Day 1.
+
+    Parameters:
+        None
+
+    Returns:
+        A dictionary contain the part 1 and part 2 solutions.
+    """
     data = load_data()
     parsed_data = parse_data(data)
     sorted_sum_list = get_sorted_sum(parsed_data)

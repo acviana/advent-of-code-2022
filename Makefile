@@ -6,12 +6,12 @@ black-diff:
 	black advent_of_code_2022 --diff
 	black tests --diff
 
+docs:
+	(cd docs && make html)
+
 export:
 	poetry export -f requirements.txt -o requirements.txt
 	poetry export -f requirements.txt -o requirements_dev.txt --with=dev
-
-ruff:
-	ruff advent_of_code_2022/
 
 install:
 	poetry install
@@ -21,8 +21,13 @@ mypy:
 
 pre-commit: black mypy ruff test
 
+publish: pre-commit docs export
+
 run:
 	python advent_of_code_2022/day_$(day).py
+
+ruff:
+	ruff advent_of_code_2022/
 
 setup-day:
 	touch advent_of_code_2022/day_$(day).py
